@@ -113,17 +113,17 @@ db.initialize(dbName1, collectionName1, function (dbCollection1) { // successCal
         dbCollection1.insertOne(item, (error, result) => { // callback of insertOne
             if (error) throw error;
             // return updated list
-            dbCollection1.find().toArray((_error, _result) => { // callback of find
-                if (_error) throw _error;
-                response.json(_result);
-            });
+          //  dbCollection1.find().toArray((_error, _result) => { // callback of find
+            //    if (_error) throw _error;
+             //   response.json(_result);
+           // });
         });
     });
 
-    server.get("/Users/:id", (request, response) => {
-        const itemId = request.params.id;
+    server.get("/Users/:email", (request, response) => {
+        const itemId = request.params.email1;
 
-        dbCollection1.findOne({ id: itemId }, (error, result) => {
+        dbCollection1.findOne({ email1: itemId }, (error, result) => {
             if (error) throw error;
             // return item
             response.json(result);
@@ -170,6 +170,127 @@ db.initialize(dbName1, collectionName1, function (dbCollection1) { // successCal
 }, function (err) { // failureCallback
     throw (err);
 });
+
+const dbName2 = "UserTransactions";
+const collectionName2 = "Transactions";
+
+db.initialize(dbName2, collectionName2, function (dbCollection2) { // successCallback
+    // get all items
+    dbCollection2.find().toArray(function (err, result) {
+        if (err) throw err;
+        // console.log(result);
+
+        // << return response to client >>
+    });
+
+    // << db CRUD routes >>
+    server.post("/Transactions", (request, response) => {
+        const item = request.body;
+        dbCollection2.insertOne(item, (error, result) => { // callback of insertOne
+            if (error) throw error;
+            // return updated list
+        });
+    });
+
+    server.get("/Transactions/:email", (request, response) => {
+        const itemId = request.params.email2;
+
+        dbCollection2.findOne({ email2: itemId }, (error, result) => {
+            if (error) throw error;
+            // return item
+            response.json(result);
+        });
+    });
+
+    server.get("/Transactions", (request, response) => {
+        // return updated list
+        dbCollection2.find().toArray((error, result) => {
+            if (error) throw error;
+            response.json(result);
+            console.log(result);
+        });
+    });
+
+    server.put("/Transactions/:_id", (request, response) => {
+        const itemId = request.params.id;
+        const item = request.body;
+        console.log("Editing User: ", itemId, " to be ", item);
+
+        dbCollection2.updateOne({ id: itemId }, { $set: item }, (error, result) => {
+            if (error) throw error;
+            // send back entire updated list, to make sure frontend data is up-to-date
+            dbCollection2.find().toArray(function (_error, _result) {
+                if (_error) throw _error;
+                response.json(_result);
+            });
+        });
+    });
+
+    server.delete("/Transactions/:_id", (request, response) => {
+        const itemId = request.params.id;
+        console.log("Delete Transaction with id: ", itemId);
+
+        dbCollection2.deleteOne({ id: itemId }, function (error, result) {
+            if (error) throw error;
+            // send back entire updated list after successful request
+            dbCollection2.find().toArray(function (_error, _result) {
+                if (_error) throw _error;
+                response.json(_result);
+            });
+        });
+    });
+}, function (err) { // failureCallback
+    throw (err);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 server.listen(port, () => {
     console.log(`Server listening at ${port}`);

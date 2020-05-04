@@ -5,8 +5,10 @@ else {
     location.href = "/2.Semester-master/RECycles Client/Login.html";
 }
 
+currentUserEmailProfile = localStorage.getItem("currentUserEmail");
+
 $.ajax({
-    url: "http://localhost:4000/Users",
+    url: "http://localhost:4000/Users" + "/" + currentUserEmailProfile,
     async: false,
     type: 'GET',
     dataType: 'json', // added data type
@@ -16,22 +18,33 @@ $.ajax({
     }
 });
 
-currentUserEmailProfile = localStorage.getItem("currentUserEmail");
-
-var foundUserProfile = existingUserProfiles.findIndex(function(user) {
-    return user.email === currentUserEmailProfile;
+$.ajax({
+    url: "http://localhost:4000/Transactions" + "/" + currentUserEmailProfile,
+    async: false,
+    type: 'GET',
+    dataType: 'json', // added data type
+    success: function(res) {
+        console.log(res);
+        window.existingUserTransactions = res;
+    }
 });
 
-var profileFirst = "Welcome" + " " + existingUserProfiles[foundUserProfile].firstName + "!";
-var profileName = existingUserProfiles[foundUserProfile].firstName + " " + existingUserProfiles[foundUserProfile].lastName;
-var profileEmail = existingUserProfiles[foundUserProfile].email;
-var profileNumber = existingUserProfiles[foundUserProfile].phoneNumber;
+
+var profileFirst = "Welcome" + " " + existingUserProfiles.firstName + "!";
+var profileName = existingUserProfiles.firstName + " " + existingUserProfiles.lastName;
+var profileEmail = existingUserProfiles.email;
+var profileNumber = existingUserProfiles.phoneNumber;
 
 
 document.getElementById('profileFirst').innerHTML = profileFirst;
 document.getElementById('profileName').innerHTML = profileName;
 document.getElementById('profileEmail').innerHTML = profileEmail;
 document.getElementById('profileNumber').innerHTML = profileNumber;
+
+
+
+
+document.getElementById('profileTransactions').innerHTML = existingUserTransactions;
 
 
 document.getElementById("LogOut").addEventListener("click", LogOut);
