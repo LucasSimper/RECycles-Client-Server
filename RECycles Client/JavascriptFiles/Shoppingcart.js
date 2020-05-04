@@ -1,5 +1,6 @@
 /*Defining all needed variables*/
 const cartProducts = document.getElementById("productsInCart");
+
 $.ajax({
     url: "http://localhost:4000/items",
     async: false,
@@ -16,7 +17,7 @@ let loadProduct = undefined; //variabel der skal lagre productID fra localStorag
 if (localStorage.getItem("loggedIn") === "true") {
 }
 else {
-    location.href = "../LoginCart.html";
+    location.href = "/2.Semester-master/RECycles Client/LoginCart.html";
 }
 
 

@@ -2,11 +2,21 @@
 if (localStorage.getItem("loggedIn") === "true") {
 }
 else {
-    location.href = "../Login.html";
+    location.href = "/2.Semester-master/RECycles Client/Login.html";
 }
 
+$.ajax({
+    url: "http://localhost:4000/Users",
+    async: false,
+    type: 'GET',
+    dataType: 'json', // added data type
+    success: function(res) {
+        // console.log(res);
+        window.existingUserProfiles = res;
+    }
+});
+
 currentUserEmailProfile = localStorage.getItem("currentUserEmail");
-existingUserProfiles = JSON.parse(localStorage.getItem("allUsers"));
 
 var foundUserProfile = existingUserProfiles.findIndex(function(user) {
     return user.email === currentUserEmailProfile;
@@ -29,6 +39,6 @@ document.getElementById("LogOut").addEventListener("click", LogOut);
 
 function LogOut() {
     localStorage.setItem("loggedIn", "");
-    location.href = "../index.html";
+    location.href = "/2.Semester-master/RECycles Client/index.html";
     localStorage.setItem("currentUserEmail", "");
 }
