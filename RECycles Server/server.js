@@ -25,7 +25,7 @@ db.initialize(dbName, collectionName, function (dbCollection) { // successCallba
     // get all items
     dbCollection.find().toArray(function (err, result) {
         if (err) throw err;
-      console.log(result);
+      // console.log(result);
 
         // << return response to client >>
     });
