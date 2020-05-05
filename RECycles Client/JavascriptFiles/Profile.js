@@ -2,7 +2,7 @@
 if (localStorage.getItem("loggedIn") === "true") {
 }
 else {
-    location.href = "/2.Semester-master/RECycles Client/Login.html";
+    location.href = "Login.html";
 }
 
 currentUserEmailProfile = localStorage.getItem("currentUserEmail");
@@ -52,6 +52,6 @@ document.getElementById("LogOut").addEventListener("click", LogOut);
 
 function LogOut() {
     localStorage.setItem("loggedIn", "");
-    location.href = "/2.Semester-master/RECycles Client/index.html";
+    location.href = "index.html";
     localStorage.setItem("currentUserEmail", "");
 }

@@ -17,7 +17,7 @@ let loadProduct = undefined; //variabel der skal lagre productID fra localStorag
 if (localStorage.getItem("loggedIn") === "true") {
 }
 else {
-    location.href = "/2.Semester-master/RECycles Client/LoginCart.html";
+    location.href = "LoginCart.html";
 }
 
 

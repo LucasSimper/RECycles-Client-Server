@@ -121,9 +121,9 @@ db.initialize(dbName1, collectionName1, function (dbCollection1) { // successCal
     });
 
     server.get("/Users/:email", (request, response) => {
-        const itemId = request.params.email1;
+        const itemId = request.params.email;
 
-        dbCollection1.findOne({ email1: itemId }, (error, result) => {
+        dbCollection1.findOne({ email: itemId }, (error, result) => {
             if (error) throw error;
             // return item
             response.json(result);

@@ -9,7 +9,7 @@ document.getElementById("Login!").addEventListener("click", checkLogin);
 document.getElementById("createUserRedirect").addEventListener("click", redirect);
 
 function redirect() {
-    location.href = "/2.Semester-master/RECycles Client/Signup.html";
+    location.href = "Signup.html";
 }
 
 //Functionen tager den indtastede email og password og søger i vores allusers array som ligger i local storage
@@ -53,12 +53,12 @@ function checkLogin (event) {
         console.log("Email and PW correct");
         localStorage.setItem("currentUserEmail", eMail.value);
         localStorage.setItem("loggedIn", "true");
-        location.href = "/2.Semester-master/RECycles Client/index.html";
+        location.href = "index.html";
 
     } else if (userExists2 === false) {
         console.log("user and PW wrong");
         alert ("It seems like you haven't created a user yet- we will direct you to our sign up page!");
-        location.href = "/2.Semester-master/RECycles Client/Signup.html";
+        location.href = "Signup.html";
     }
 }
 
