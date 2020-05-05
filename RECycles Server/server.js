@@ -8,6 +8,7 @@ const body_parser = require("body-parser");
 server.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     next();
 });
 
@@ -154,11 +155,11 @@ db.initialize(dbName1, collectionName1, function (dbCollection1) { // successCal
         });
     });
 
-    server.delete("/Users/:id", (request, response) => {
-        const itemId = request.params.id;
-        console.log("Delete User with id: ", itemId);
+    server.delete("/Users/:email", (request, response) => {
+        const itemId = request.params.email;
+        console.log("Delete User with email: ", itemId);
 
-        dbCollection1.deleteOne({ id: itemId }, function (error, result) {
+        dbCollection1.deleteOne({ email: itemId }, function (error, result) {
             if (error) throw error;
             // send back entire updated list after successful request
             dbCollection1.find().toArray(function (_error, _result) {
