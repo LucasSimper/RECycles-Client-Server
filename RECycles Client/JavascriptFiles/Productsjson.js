@@ -1,11 +1,9 @@
 //behøvede variabler defineres - specifikationer ud for
 const productsElement = document.getElementById("productsApp"); //elementet hvori produkter skrives ind
-const myProducts = "products.json"; //stien til products.json defineres
 const mensFilter = document.getElementById("mensFilter"); // de tre filtre defineres
 const womensFilter = document.getElementById("womensFilter"); // --
 const childrensFilter = document.getElementById("childrensFilter"); // --
 
-let data = undefined; //data defineres som undefined, så den kan fetches og ligges ind hvis den mangler
 $.ajax({
     url: "http://localhost:4000/items",
     async: false,
@@ -16,21 +14,8 @@ $.ajax({
         window.bigboy = res;
     }
 });
-console.log(bigboy);
 /*Denne funktion viser produkter baseret på den i funktionen definerede type - namely deres køn i dette tilfælde*/
 function display(type) {
-    /*if (!data) {
-        fetch(myProducts)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(json) {
-                data = json.products;
-                display(type);
-            });
-        return;
-    } /*hvis data (defineret ovenfor) er undefined (false), vil denne fetche dataen fra JSON og definere som data.*/
-
     productsElement.innerHTML = ""; //sørger for at productsElement html elementet er tomt
 
     if (!type) {
@@ -96,10 +81,6 @@ function displayChildrens() {
     ButtonsLoaded = true;
 }
 
-/*function displayMensWomens() {
-    //potentielt skal jeg adde 3 eventlisteners (en per knap) og så tre if statement filters der viser den respektive data, derved stacker det dataen
-    display("Mens" && "Womens");
-}*/
 [mensFilter, womensFilter, childrensFilter].forEach(element =>
     element.addEventListener("change", genderFilter, "")
 );
