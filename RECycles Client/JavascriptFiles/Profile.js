@@ -24,7 +24,7 @@ $.ajax({
     type: 'GET',
     dataType: 'json', // added data type
     success: function(res) {
-        console.log(res);
+       console.log(res);
         window.existingUserTransactions = res;
     }
 });
@@ -42,9 +42,9 @@ document.getElementById('profileEmail').innerHTML = profileEmail;
 document.getElementById('profileNumber').innerHTML = profileNumber;
 
 
+// console.log(existingUserTransactions.productID(0));
 
-
-document.getElementById('profileTransactions').innerHTML = existingUserTransactions;
+document.getElementById('profileTransactions').innerHTML = (JSON.stringify(existingUserTransactions));
 
 
 document.getElementById("LogOut").addEventListener("click", LogOut);

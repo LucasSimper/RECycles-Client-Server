@@ -192,11 +192,10 @@ db.initialize(dbName2, collectionName2, function (dbCollection2) { // successCal
         });
     });
 
-    server.get("/Transactions/:email", (request, response) => {
-        const itemId = request.params.email2;
-
-        dbCollection2.findOne({ email2: itemId }, (error, result) => {
-            if (error) throw error;
+    server.get("/Transactions/:emailID", (request, response) => {
+        const itemId = request.params.emailID;
+        dbCollection2.find({ emailID: itemId }).toArray(function (error,result) {
+           // if (error) throw error;
             // return item
             response.json(result);
         });
@@ -242,55 +241,6 @@ db.initialize(dbName2, collectionName2, function (dbCollection2) { // successCal
 }, function (err) { // failureCallback
     throw (err);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 server.listen(port, () => {
     console.log(`Server listening at ${port}`);

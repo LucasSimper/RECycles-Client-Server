@@ -24,7 +24,7 @@ function checkOut() {
     );
 
     $.ajax({
-        url: "http://localhost:4000/Transactions",
+        url: "http://localhost:4000/Transactions" + "",
         type: 'POST',
         data: JSON.stringify(transaction1),
         dataType: 'json',
