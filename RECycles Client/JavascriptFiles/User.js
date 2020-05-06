@@ -111,5 +111,5 @@ function createUser() {
     alert(
         "Thank you for creating a user! We will now redirect you to our homepage!"
     );
-    location.href = "/2.Semester-master/RECycles Client/Login.html";
+    location.href = "Login.html";
 }

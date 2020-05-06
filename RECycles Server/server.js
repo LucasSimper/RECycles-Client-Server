@@ -1,5 +1,7 @@
 // server.js
 
+
+// Dette
 const express = require('express');
 const server = express();
 
@@ -8,6 +10,7 @@ const body_parser = require("body-parser");
 server.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     next();
 });
 
@@ -31,18 +34,6 @@ db.initialize(dbName, collectionName, function (dbCollection) { // successCallba
     });
 
     // << db CRUD routes >>
-    server.post("/items", (request, response) => {
-        const item = request.body;
-        dbCollection.insertOne(item, (error, result) => { // callback of insertOne
-            if (error) throw error;
-            // return updated list
-            dbCollection.find().toArray((_error, _result) => { // callback of find
-                if (_error) throw _error;
-                response.json(_result);
-            });
-        });
-    });
-
     server.get("/items/:id", (request, response) => {
         const itemId = request.params.id;
 
@@ -59,21 +50,6 @@ db.initialize(dbName, collectionName, function (dbCollection) { // successCallba
             if (error) throw error;
             response.json(result);
             console.log(result);
-        });
-    });
-
-    server.put("/items/:id", (request, response) => {
-        const itemId = request.params.id;
-        const item = request.body;
-        console.log("Editing item: ", itemId, " to be ", item);
-
-        dbCollection.updateOne({ id: itemId }, { $set: item }, (error, result) => {
-            if (error) throw error;
-            // send back entire updated list, to make sure frontend data is up-to-date
-            dbCollection.find().toArray(function (_error, _result) {
-                if (_error) throw _error;
-                response.json(_result);
-            });
         });
     });
 
@@ -113,17 +89,17 @@ db.initialize(dbName1, collectionName1, function (dbCollection1) { // successCal
         dbCollection1.insertOne(item, (error, result) => { // callback of insertOne
             if (error) throw error;
             // return updated list
-            dbCollection1.find().toArray((_error, _result) => { // callback of find
-                if (_error) throw _error;
-                response.json(_result);
-            });
+          //  dbCollection1.find().toArray((_error, _result) => { // callback of find
+            //    if (_error) throw _error;
+             //   response.json(_result);
+           // });
         });
     });
 
-    server.get("/Users/:id", (request, response) => {
-        const itemId = request.params.id;
+    server.get("/Users/:email", (request, response) => {
+        const itemId = request.params.email;
 
-        dbCollection1.findOne({ id: itemId }, (error, result) => {
+        dbCollection1.findOne({ email: itemId }, (error, result) => {
             if (error) throw error;
             // return item
             response.json(result);
@@ -139,29 +115,70 @@ db.initialize(dbName1, collectionName1, function (dbCollection1) { // successCal
         });
     });
 
-    server.put("/Users/:id", (request, response) => {
-        const itemId = request.params.id;
-        const item = request.body;
-        console.log("Editing User: ", itemId, " to be ", item);
+    server.delete("/Users/:email", (request, response) => {
+        const itemId = request.params.email;
+        console.log("Delete User with email: ", itemId);
 
-        dbCollection1.updateOne({ id: itemId }, { $set: item }, (error, result) => {
+        dbCollection1.deleteOne({ email: itemId }, function (error, result) {
             if (error) throw error;
-            // send back entire updated list, to make sure frontend data is up-to-date
+            // send back entire updated list after successful request
             dbCollection1.find().toArray(function (_error, _result) {
                 if (_error) throw _error;
                 response.json(_result);
             });
         });
     });
+}, function (err) { // failureCallback
+    throw (err);
+});
 
-    server.delete("/Users/:id", (request, response) => {
+const dbName2 = "UserTransactions";
+const collectionName2 = "Transactions";
+
+db.initialize(dbName2, collectionName2, function (dbCollection2) { // successCallback
+    // get all items
+    dbCollection2.find().toArray(function (err, result) {
+        if (err) throw err;
+        // console.log(result);
+
+        // << return response to client >>
+    });
+
+    // << db CRUD routes >>
+    server.post("/Transactions", (request, response) => {
+        const item = request.body;
+        dbCollection2.insertOne(item, (error, result) => { // callback of insertOne
+            if (error) throw error;
+            // return updated list
+        });
+    });
+
+    server.get("/Transactions/:emailID", (request, response) => {
+        const itemId = request.params.emailID;
+        dbCollection2.find({ emailID: itemId }).toArray(function (error,result) {
+           // if (error) throw error;
+            // return item
+            response.json(result);
+        });
+    });
+
+    server.get("/Transactions", (request, response) => {
+        // return updated list
+        dbCollection2.find().toArray((error, result) => {
+            if (error) throw error;
+            response.json(result);
+            console.log(result);
+        });
+    });
+
+    server.delete("/Transactions/:_id", (request, response) => {
         const itemId = request.params.id;
-        console.log("Delete User with id: ", itemId);
+        console.log("Delete Transaction with id: ", itemId);
 
-        dbCollection1.deleteOne({ id: itemId }, function (error, result) {
+        dbCollection2.deleteOne({ id: itemId }, function (error, result) {
             if (error) throw error;
             // send back entire updated list after successful request
-            dbCollection1.find().toArray(function (_error, _result) {
+            dbCollection2.find().toArray(function (_error, _result) {
                 if (_error) throw _error;
                 response.json(_result);
             });
