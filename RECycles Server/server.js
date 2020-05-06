@@ -1,5 +1,7 @@
 // server.js
 
+
+// Dette
 const express = require('express');
 const server = express();
 
@@ -32,18 +34,6 @@ db.initialize(dbName, collectionName, function (dbCollection) { // successCallba
     });
 
     // << db CRUD routes >>
-    server.post("/items", (request, response) => {
-        const item = request.body;
-        dbCollection.insertOne(item, (error, result) => { // callback of insertOne
-            if (error) throw error;
-            // return updated list
-            dbCollection.find().toArray((_error, _result) => { // callback of find
-                if (_error) throw _error;
-                response.json(_result);
-            });
-        });
-    });
-
     server.get("/items/:id", (request, response) => {
         const itemId = request.params.id;
 
@@ -60,21 +50,6 @@ db.initialize(dbName, collectionName, function (dbCollection) { // successCallba
             if (error) throw error;
             response.json(result);
             console.log(result);
-        });
-    });
-
-    server.put("/items/:id", (request, response) => {
-        const itemId = request.params.id;
-        const item = request.body;
-        console.log("Editing item: ", itemId, " to be ", item);
-
-        dbCollection.updateOne({ id: itemId }, { $set: item }, (error, result) => {
-            if (error) throw error;
-            // send back entire updated list, to make sure frontend data is up-to-date
-            dbCollection.find().toArray(function (_error, _result) {
-                if (_error) throw _error;
-                response.json(_result);
-            });
         });
     });
 
@@ -140,21 +115,6 @@ db.initialize(dbName1, collectionName1, function (dbCollection1) { // successCal
         });
     });
 
-    server.put("/Users/:id", (request, response) => {
-        const itemId = request.params.id;
-        const item = request.body;
-        console.log("Editing User: ", itemId, " to be ", item);
-
-        dbCollection1.updateOne({ id: itemId }, { $set: item }, (error, result) => {
-            if (error) throw error;
-            // send back entire updated list, to make sure frontend data is up-to-date
-            dbCollection1.find().toArray(function (_error, _result) {
-                if (_error) throw _error;
-                response.json(_result);
-            });
-        });
-    });
-
     server.delete("/Users/:email", (request, response) => {
         const itemId = request.params.email;
         console.log("Delete User with email: ", itemId);
@@ -208,21 +168,6 @@ db.initialize(dbName2, collectionName2, function (dbCollection2) { // successCal
             if (error) throw error;
             response.json(result);
             console.log(result);
-        });
-    });
-
-    server.put("/Transactions/:_id", (request, response) => {
-        const itemId = request.params.id;
-        const item = request.body;
-        console.log("Editing User: ", itemId, " to be ", item);
-
-        dbCollection2.updateOne({ id: itemId }, { $set: item }, (error, result) => {
-            if (error) throw error;
-            // send back entire updated list, to make sure frontend data is up-to-date
-            dbCollection2.find().toArray(function (_error, _result) {
-                if (_error) throw _error;
-                response.json(_result);
-            });
         });
     });
 
