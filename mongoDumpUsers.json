@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5eb05358fbd99e8bf6fe3149"},"firstName":"Sebastian","lastName":"Teglhus","email":"seb.teglhus@live.dk","phoneNumber":"30458698","password":"$2b$12$vVeOiaspNMkCr0S7Za5yWeBGGrNmimR.h7qXb3mAPn2MLOiFh6jHO"}
+{"_id":{"$oid":"5ea463476a5fb25b2880a6c4"},"firstName":"Lucas","lastName":"Simper","email":"admin","phoneNumber":"41825833","password":"admin"}

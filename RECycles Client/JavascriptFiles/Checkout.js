@@ -32,4 +32,6 @@ function checkOut() {
     });
 
     RemoveFromCart();
+
+    alert("Thank you for your purchase! You can find your order on your profile page :)")
 }

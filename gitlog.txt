@@ -1,0 +1,220 @@
+commit 860e0ccea539e91bc679ff6b332e7f86d0686ecd
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Wed May 6 12:13:57 2020 +0200
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Wed May 6 12:13:57 2020 +0200
+
+    Cleaning Up API in server.js
+
+commit 2fd47f64492bd97511244878b5dc815d191ad908
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Tue May 5 17:49:07 2020 +0200
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Tue May 5 17:49:07 2020 +0200
+
+    Added a Delete User/Account function using our existing API route
+
+commit c17aab3627537ea5bea9d321ab98798ffb000a45
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Tue May 5 17:11:18 2020 +0200
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Tue May 5 17:11:18 2020 +0200
+
+    Fix for redirects on Computers that aren't
+
+commit 85695d0d1d0095dab68ccebedcd8340be604e0d0
+Merge: ab43c56 5e09f20
+Author:     LucasSimper <55131427+LucasSimper@users.noreply.github.com>
+AuthorDate: Tue May 5 16:34:37 2020 +0200
+Commit:     GitHub <noreply@github.com>
+CommitDate: Tue May 5 16:34:37 2020 +0200
+
+    Merge pull request #4 from LucasSimper/Lucas
+    
+    Lucas
+
+commit ab43c561ad948179de24df5d77a8e4e53fea0b0d
+Merge: e293201 4e2ddad
+Author:     Sebteglhus <55276197+Sebteglhus@users.noreply.github.com>
+AuthorDate: Tue May 5 16:33:34 2020 +0200
+Commit:     GitHub <noreply@github.com>
+CommitDate: Tue May 5 16:33:34 2020 +0200
+
+    Merge pull request #3 from LucasSimper/Seb
+    
+    Oprydning af filer, ændring af paths, samt removal af overflødig kode
+
+commit 5e09f20deb4c8d67cf917d7ccca1453da645234b
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Tue May 5 16:33:17 2020 +0200
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Tue May 5 16:33:17 2020 +0200
+
+    Work on Transcations showing under Profile
+
+commit 4e2ddad4d721ae82216714dbff309d21341c3f6d
+Author:     Sebteglhus <sete19ab@student.cbs.dk>
+AuthorDate: Tue May 5 16:31:13 2020 +0200
+Commit:     Sebteglhus <sete19ab@student.cbs.dk>
+CommitDate: Tue May 5 16:31:13 2020 +0200
+
+    Oprydning af filer, ændring af paths, samt removal af overflødig kode
+
+commit 7bb312a97b98182a89596bf8a7d0c358cd6fcac0
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Mon May 4 18:30:45 2020 +0200
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Mon May 4 18:30:45 2020 +0200
+
+    Work on checkout and transactions
+
+commit e293201095c0fb7a2bb719cca740d312105ceb8a
+Merge: eb88340 2e055f2
+Author:     LucasSimper <55131427+LucasSimper@users.noreply.github.com>
+AuthorDate: Mon May 4 16:10:59 2020 +0200
+Commit:     GitHub <noreply@github.com>
+CommitDate: Mon May 4 16:10:59 2020 +0200
+
+    Merge pull request #2 from LucasSimper/master
+    
+    Merge
+
+commit 2e055f2121599a6fc31418c2a702a7838116bbf5
+Merge: eb88340 f87a4fc
+Author:     LucasSimper <55131427+LucasSimper@users.noreply.github.com>
+AuthorDate: Mon May 4 16:09:33 2020 +0200
+Commit:     GitHub <noreply@github.com>
+CommitDate: Mon May 4 16:09:33 2020 +0200
+
+    Merge pull request #1 from LucasSimper/Lucas
+    
+    Cleanup in redirects and work on logged in User info
+
+commit f87a4fcf21a2bb2451201dc8f7fad36642f2e928
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Mon May 4 16:08:36 2020 +0200
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Mon May 4 16:08:36 2020 +0200
+
+    Cleanup in redirects and work on logged in User info
+
+commit eb88340faa30ad5c43b7464691b5d9457b036a4d
+Author:     Mikkel Fetterlein <mife19ac@student.cbs.dk>
+AuthorDate: Mon May 4 15:21:35 2020 +0200
+Commit:     Mikkel Fetterlein <mife19ac@student.cbs.dk>
+CommitDate: Mon May 4 15:21:35 2020 +0200
+
+    Local storage cleanup
+
+commit 860e0ccea539e91bc679ff6b332e7f86d0686ecd
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Wed April 29 2020
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Wed April 29 2020
+
+    Integrating HTML requests
+
+commit 2fd47f64492bd97511244878b5dc815d191ad908
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Tue April 21 2020
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Tue April 21 2020
+
+    Bugfixing on CRUD Routes
+
+commit c17aab3627537ea5bea9d321ab98798ffb000a45
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Tue April 14 2020
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Tue April 14 2020
+
+    CRUD routes
+
+commit 85695d0d1d0095dab68ccebedcd8340be604e0d0
+Merge: ab43c56 5e09f20
+Author:     LucasSimper <55131427+LucasSimper@users.noreply.github.com>
+AuthorDate: Tue April 14 2020
+Commit:     GitHub <noreply@github.com>
+CommitDate: Tue April 14 2020
+
+    Merge pull request #4 from LucasSimper/Lucas
+    
+    Lucas
+
+commit ab43c561ad948179de24df5d77a8e4e53fea0b0d
+Merge: e293201 4e2ddad
+Author:     Mikkel Fetterlein <55276197+Mikkelfetterlein@users.noreply.github.com>
+AuthorDate: Tue April 14 2020
+Commit:     GitHub <noreply@github.com>
+CommitDate: Tue April 14 2020
+
+    Merge pull request #3 from LucasSimper/Mikkel
+    
+    Merge
+
+commit 5e09f20deb4c8d67cf917d7ccca1453da645234b
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Mon April 6 2020
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Mon April 6 2020
+
+    Database work
+
+commit 4e2ddad4d721ae82216714dbff309d21341c3f6d
+Author:     Sebteglhus <sete19ab@student.cbs.dk>
+AuthorDate: Wed April 1 2020
+Commit:     Sebteglhus <sete19ab@student.cbs.dk>
+CommitDate: Wed April 1 2020
+
+    Mongo DB atlas integration
+
+commit 7bb312a97b98182a89596bf8a7d0c358cd6fcac0
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Mon March 23 2020
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Mon March 23 2020
+
+    Work on Express and Node.js
+
+commit e293201095c0fb7a2bb719cca740d312105ceb8a
+Merge: eb88340 2e055f2
+Author:     LucasSimper <55131427+LucasSimper@users.noreply.github.com>
+AuthorDate: Mon March 23 2020
+Commit:     GitHub <noreply@github.com>
+CommitDate: Mon March 23 2020
+
+    Merge pull request #2 from LucasSimper/master
+    
+
+commit 2e055f2121599a6fc31418c2a702a7838116bbf5
+Merge: eb88340 f87a4fc
+Author:     LucasSimper <55131427+LucasSimper@users.noreply.github.com>
+AuthorDate: Mon March 23 2020
+Commit:     GitHub <noreply@github.com>
+CommitDate: Mon March 23 2020
+
+    Merge pull request #1 from LucasSimper/Lucas
+    
+    Beginning work on Server files
+
+commit f87a4fcf21a2bb2451201dc8f7fad36642f2e928
+Author:     LucasSimper <lusi19ac@student.cbs.dk>
+AuthorDate: Wed March 18 2020
+Commit:     LucasSimper <lusi19ac@student.cbs.dk>
+CommitDate: Wed March 4 2020
+
+    Cleanup and preparation for API
+
+commit eb88340faa30ad5c43b7464691b5d9457b036a4d
+Author:     Mikkel Fetterlein <mife19ac@student.cbs.dk>
+AuthorDate: Wed March 18 2020
+Commit:     Mikkel Fetterlein <mife19ac@student.cbs.dk>
+CommitDate: Wed March 4 2020
+
+    Reorganizing files
+
+
+
+
+
+
