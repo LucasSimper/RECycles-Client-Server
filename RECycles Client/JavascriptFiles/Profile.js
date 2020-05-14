@@ -70,6 +70,7 @@ if (localStorage.getItem("loggedIn") === "true") {
         });
 
         LogOut();
+        location.href = "Index.html";
     }
 
 

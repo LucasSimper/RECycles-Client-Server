@@ -117,12 +117,10 @@ db.initialize(dbName1, collectionName1, function (dbCollection1) { // successCal
 
         dbCollection1.deleteOne({ email: itemId }, function (error, result) {
             if (error) throw error;
-           /* dbCollection1.find().toArray(function (_error, _result) {
+           dbCollection1.find().toArray(function (_error, _result) {
                 if (_error) throw _error;
                 response.json(_result);
             });
-
-            */
         });
     });
 }, function (err) { // failureCallback
